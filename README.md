@@ -6,8 +6,7 @@ We will try to answer that question in a non-trivial setup. To do that, we are g
 
 The relevant parameters we are going to consider are CPU and memory consumption, response times and response codes. We are also going to observe the receive/transmit bandwidth, and deduce the key resources when we make envoy suffer a little. 
 
-> ℹ️ **_NOTE:_** The complete set of scripts and code used to write this blogpost can be found in
-> *TODO: github link*
+> ℹ️ **_NOTE:_** The complete set of scripts and code used to write this blogpost can be found in this repo
 
 ## Setting Up the Istio Ingress Gateway and Grafana for Observability
 
@@ -160,7 +159,7 @@ spec:
         memory: 350Mi
 ```
 
-Let's also have a look at the actual K6 test, located in a configmap created:
+Let's also have a look at the actual K6 test, located in a configmap:
 ```shell
 kubectl create configmap k6-test --from-file k6-test-single.js
 ```
