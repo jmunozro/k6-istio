@@ -1,3 +1,5 @@
+![k6-istio](./images/k6-istio.svg)
+
 One of the most common questions I get from solo customers is about the number of replicas and architecture needed to use the Istio Ingress Gateway at scale.
 
 The Istio Ingress Gateway is able to sustain a decent amount of traffic for the average application. But how much is `decent`? At what cost?
