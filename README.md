@@ -369,7 +369,7 @@ This one is the most interesting, as we mentioned we expected something around ~
 > - ~14.5k RPS using 4 cpu = 1.2 billion requests per day
 > - ~26k RPS using 8 cpu = 2.2 billion requests per day
 
-![rps](./images/rps.png)
+![rps](./images/rps.png) 
 
 ## Conclusion <a name="conclusion-"></a>
 
