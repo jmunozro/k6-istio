@@ -1,10 +1,10 @@
 ![k6-istio](./images/k6-istio.svg)
 
-One of the most common questions I get from [solo](https://solo.io/) customers is about the number of replicas and architecture needed to use the Istio Ingress Gateway at scale.
+One of the most common questions we get from [solo](https://solo.io/) customers is about the number of replicas and architecture needed to use the **Istio Ingress Gateway** at scale.
 
 The Istio Ingress Gateway is able to sustain a decent amount of traffic for the average application. But how much is that? At what cost? Is it robust?
 
-We will try to answer those questions using a non-trivial setup. To do that, we are going to configure *1000 unique dns domains*, each one of them exposed with TLS certificate, and serving *100 different paths*. If you are familiar with envoy, this is about 150MB of [envoy configdump](https://envoyui.solo.io/).
+We will try to answer those questions using a non-trivial setup. To do that, we are going to configure **1000 unique dns domains**, each one of them exposed with TLS certificate, and serving **100 different paths**. If you are familiar with envoy, this is about 150MB of [envoy configdump](https://envoyui.solo.io/).
 
 The relevant parameters we are going to consider are CPU and memory consumption, response times and response codes. We are also going to observe the receive/transmit bandwidth, and deduce the key resources when we make envoy suffer a little. 
 
@@ -267,7 +267,7 @@ This simple scenario will send GET requests to the /get/n endpoint of the Ingres
 
 Once K6 operator is in action, you will see that it creates 18 pods, each one of them executing a portion of the total requests to be sent.
 
-Using this approach, you can use many cheap spot machines for your tests, for a virtually *unlimited* throughput:
+Using this approach, you can use many cheap spot machines for your tests, for a virtually **unlimited** throughput:
 
 ```yaml
   containers:
@@ -312,7 +312,7 @@ After some time, you can have a very nice overview of what is happening in the s
 
 ![test2.png](./images/test2.png)
 
-As we know from [envoy at scale](https://www.solo.io/blog/envoy-at-scale-with-gloo-edge/) data, envoy can well sustain a little bit more than *2,000 RPS per CPU*, so that was our expectation at the time of writing.
+As we know from [envoy at scale](https://www.solo.io/blog/envoy-at-scale-with-gloo-edge/) data, envoy can well sustain a little bit more than **2,000 RPS per CPU**, so that was our expectation at the time of writing.
 
 The version used for this test is the 1.18.0, curated by solo. It is essentially a hardened version of upstream Istio, with some enterprise filters that we won't use for this test.
 
