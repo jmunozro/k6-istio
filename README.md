@@ -10,7 +10,14 @@ The relevant parameters we are going to consider are CPU and memory consumption,
 
 > ℹ️ **_NOTE:_** The complete set of scripts and code used to write this blogpost can be found in [this repo](./scripts/)
 
-## Setting Up the Istio Ingress Gateway and Grafana for Observability
+## Table of Contents
+* [Setting Up the Istio Ingress Gateway and Grafana](#set-up-)
+* [Load Testing the Istio Ingress Gateway With K6](#load-test-)
+* [Visualizing the Istio Ingress Gateway Metrics in Grafana dashboards](#visualize-)
+* [Analyzing the Istio Ingress Gateway Performance Under Load](#analyze-)
+* [Conclusion](#conclusion-)
+
+## Setting Up the Istio Ingress Gateway and Grafana <a name="set-up-"></a>
 
 To properly test the Istio Ingress Gateway under load and gain observability into its performance, Grafana tools can be used. Specifically, the open-source K6 load testing tool from Grafana Labs and pre-built Istio dashboards in Grafana.
 
@@ -217,7 +224,7 @@ In the custom dashboard, we can see metrics coming from different sources:
 
 ![test1.png](./images/test1.png)
 
-## Load Testing the Istio Ingress Gateway With K6
+## Load Testing the Istio Ingress Gateway With K6 <a name="load-test-"></a>
 
 To properly test the performance and reliability of Istio's Ingress Gateway, it's important to simulate traffic at high volumes. We will run a script to limit the CPU that the Ingress Gateway can use:
 
@@ -306,7 +313,7 @@ Another cool thing about these many tester pods is that they produce metrics, so
 
 It is also possible to ship them to an [OpenTelemetry](https://opentelemetry.io/) collector, where we can manipulate them before sending them to the final destination, which is usually a prometheus instance.
 
-## Visualizing the Istio Ingress Gateway Metrics in Grafana
+## Visualizing the Istio Ingress Gateway Metrics in Grafana dashboards <a name="visualize-"></a>
 
 After some time, you can have a very nice overview of what is happening in the system.
 
@@ -321,7 +328,7 @@ You can find the image in the [workshops](https://github.com/solo-io/workshops) 
 us-docker.pkg.dev/gloo-mesh/istio-workshops/proxyv2:1.18.0-solo
 ```
 
-## Analyzing the Istio Ingress Gateway Performance Under Load
+## Analyzing the Istio Ingress Gateway Performance Under Load <a name="analyze-"></a>
 
 To analyze the performance of the Istio Ingress Gateway under load, let's observe the final snapshot of our 4-phase test:
 
@@ -364,7 +371,7 @@ This one is the most interesting, as we mentioned we expected something around ~
 
 ![rps](./images/rps.png)
 
-## Conclusion
+## Conclusion <a name="conclusion-"></a>
 
 In summary, by combining [Grafana K6 load testing tool](https://k6.io/) with [Grafana dashboards](https://grafana.com/grafana/dashboards/), developers can easily analyze [Istio Ingress Gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/) performance under high loads. The K6 tool allows generating large volumes of traffic to stress test the gateway, while the Grafana dashboards provide detailed insights into metrics like request rates, response times, and error rates.
 
