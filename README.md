@@ -316,7 +316,7 @@ As we know from [envoy at scale](https://www.solo.io/blog/envoy-at-scale-with-gl
 
 The version used for this test is the 1.18.0, curated by solo. It is essentially a hardened version of upstream Istio, with some enterprise filters that we won't use for this test.
 
-You can find the image in the workshops repository:
+You can find the image in the [workshops](https://github.com/solo-io/workshops) repository:
 ```
 us-docker.pkg.dev/gloo-mesh/istio-workshops/proxyv2:1.18.0-solo
 ```
