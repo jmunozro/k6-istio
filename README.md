@@ -2,13 +2,13 @@
 
 One of the most common questions I get from [solo](https://solo.io/) customers is about the number of replicas and architecture needed to use the Istio Ingress Gateway at scale.
 
-The Istio Ingress Gateway is able to sustain a decent amount of traffic for the average application. But how much is `decent`? At what cost?
+The Istio Ingress Gateway is able to sustain a decent amount of traffic for the average application. But how much is that? At what cost? Is it robust?
 
-We will try to answer that question in a non-trivial setup. To do that, we are going to configure 1000 unique dns domains, each one of them exposed with TLS certificate, and serving 100 different paths. If you are familiar with envoy, this is about 150MB of [envoy configdump](https://envoyui.solo.io/).
+We will try to answer those questions using a non-trivial setup. To do that, we are going to configure *1000 unique dns domains*, each one of them exposed with TLS certificate, and serving *100 different paths*. If you are familiar with envoy, this is about 150MB of [envoy configdump](https://envoyui.solo.io/).
 
 The relevant parameters we are going to consider are CPU and memory consumption, response times and response codes. We are also going to observe the receive/transmit bandwidth, and deduce the key resources when we make envoy suffer a little. 
 
-> ℹ️ **_NOTE:_** The complete set of scripts and code used to write this blogpost can be found in this repo
+> ℹ️ **_NOTE:_** The complete set of scripts and code used to write this blogpost can be found in [this repo](./scripts/)
 
 ## Setting Up the Istio Ingress Gateway and Grafana for Observability
 
