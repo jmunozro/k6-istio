@@ -1,6 +1,6 @@
 ![k6-istio](./images/k6-istio.svg)
 
-One of the most common questions I get from solo customers is about the number of replicas and architecture needed to use the Istio Ingress Gateway at scale.
+One of the most common questions I get from [solo](https://solo.io/) customers is about the number of replicas and architecture needed to use the Istio Ingress Gateway at scale.
 
 The Istio Ingress Gateway is able to sustain a decent amount of traffic for the average application. But how much is `decent`? At what cost?
 
@@ -357,19 +357,23 @@ During our load testing, not a single error was observed. This metric is coming 
 
 This one is the most interesting, as we mentioned we expected something around ~2k RPS, but the actual numbers were a bit higher:
 
-> - ~4k RPS using 1 cpu = 345 million request per day
-> - ~8k RPS using 2 cpu = 690 million request per day
-> - ~14.5k RPS using 4 cpu = 1.2 billion request per day
-> - ~26k RPS using 8 cpu = 2.2billion request per day
+> - ~4k RPS using 1 cpu = 345 million requests per day
+> - ~8k RPS using 2 cpu = 690 million requests per day
+> - ~14.5k RPS using 4 cpu = 1.2 billion requests per day
+> - ~26k RPS using 8 cpu = 2.2 billion requests per day
 
 ![rps](./images/rps.png)
 
 ## Conclusion
 
-In summary, by combining Grafana K6 load testing tool with Grafana dashboards, developers can easily analyze Istio Ingress Gateway performance under high loads. The K6 tool allows generating large volumes of traffic to stress test the gateway, while the Grafana dashboards provide detailed insights into metrics like request rates, response times, and error rates.
+In summary, by combining [Grafana K6 load testing tool](https://k6.io/) with [Grafana dashboards](https://grafana.com/grafana/dashboards/), developers can easily analyze [Istio Ingress Gateway](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/) performance under high loads. The K6 tool allows generating large volumes of traffic to stress test the gateway, while the Grafana dashboards provide detailed insights into metrics like request rates, response times, and error rates.
 
 Using this approach, Istio operators can identify bottlenecks, ensure high availability, and optimize configurations to handle increased traffic demands as adoption of the service mesh grows within an organization. With the ability to simulate real user scenarios at scale, developers gain valuable insights to build and operate a robust Istio infrastructure.
 
 A single replica of Istio Ingress Gateway is good enough for many production-grade applications, and combining it with an automated horizontal scaling of the gateway will make it real a solid solution for most applications.
 
-However, to have High Availability in addition to a good performance, a multicluster approach is recommended, as a cluster-wide failure can make a lot of harm to your business if you rely on a single-cluster approach.
+However, to have High Availability in addition to a good performance, a [multicluster approach](https://docs.solo.io/gloo-mesh-enterprise/main/concepts/about/benefits/#multicluster-benefits) is recommended, as a cluster-wide failure can make a lot of harm to your business if you rely on a single-cluster approach.
+
+To learn how you can do this, step by step:
+
+[<img src="https://img.youtube.com/vi/94vhMLqMqbI/maxresdefault.jpg" alt="VIDEO LINK" width="560" height="315"/>](https://youtu.be/94vhMLqMqbI "Video Link")
