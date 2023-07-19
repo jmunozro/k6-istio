@@ -362,7 +362,7 @@ During our load testing, not a single error was observed. This metric is coming 
 
 ### Last row: Requests per second and response codes
 
-This one is the most interesting, as we mentioned we expected something around ~2k RPS, but the actual numbers were a bit higher:
+This one is the most interesting, as we mentioned we expected something around ~2k RPS per cpu, however the actual numbers were a bit better than that:
 
 > - ~4k RPS using 1 cpu = 345 million requests per day
 > - ~8k RPS using 2 cpu = 690 million requests per day
